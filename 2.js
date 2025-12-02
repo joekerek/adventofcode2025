@@ -50,11 +50,15 @@ const p2 = () => {
   }
 
   const subStringMakesString = (str, substr) => {
-    let newstr = '';
-    while (newstr.length < str.length) {
-      newstr += substr;
+    if(str.length % substr.length !== 0) {
+      return false;
     }
-    return newstr === str;
+    const times = str.length / substr.length;
+    let result = '';
+    for(let i = 0; i < times; i++) {
+      result += substr;
+    }
+    return result === str;
   }
 
   const getAllSubStrings = (str) => {
