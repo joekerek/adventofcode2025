@@ -50,12 +50,12 @@ const p2 = () => {
   }
 
   const subStringMakesString = (str, substr) => {
-    if(str.length % substr.length !== 0) {
+    if (str.length % substr.length !== 0) {
       return false;
     }
     const times = str.length / substr.length;
     let result = '';
-    for(let i = 0; i < times; i++) {
+    for (let i = 0; i < times; i++) {
       result += substr;
     }
     return result === str;
@@ -63,10 +63,11 @@ const p2 = () => {
 
   const getAllSubStrings = (str) => {
     const substrings = [];
-    for (let i = 0; i < str.length; i++) {
-      for (let j = i + 1; j < str.length; j++) {
-        substrings.push(str.slice(i, j));
-      }
+    let middle = Math.floor(str.length / 2);
+    while (middle >= 0) {
+      const s = str.slice(0, middle)
+      substrings.push(s)
+      middle--;
     }
     return substrings;
   }
