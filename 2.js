@@ -49,7 +49,7 @@ const p2 = () => {
     ranges.push(entries)
   }
 
-  const findAllSubstring = (str, substr) => {
+  const subStringMakesString = (str, substr) => {
     let newstr = '';
     while (newstr.length < str.length) {
       newstr += substr;
@@ -71,7 +71,7 @@ const p2 = () => {
     const subStrings = getAllSubStrings(str);
 
     for (const sub of subStrings) {
-      const makesString = findAllSubstring(str, sub)
+      const makesString = subStringMakesString(str, sub)
       if (makesString) return true;
     }
     return false;
